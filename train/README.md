@@ -38,11 +38,11 @@ python main.py --mode train --data_dir ./data --pretrained_bert_dir ./pretrained
 
 训练中间日志如下：
 
-
+<img src="https://github.com/Agentiums/Aihubix/blob/main/train/image/a1.png?raw=true" alt="a1" style="zoom:80%;" />
 
 模型在验证集上的效果如下：
 
-
+<img src="https://github.com/Agentiums/Aihubix/blob/main/train/image/a2.png?raw=true" alt="a2" style="zoom:80%;" />
 
 ### 模型预测
 
@@ -53,3 +53,5 @@ python main.py --mode predict --data_dir ./data --pretrained_bert_dir ./pretrain
 ```
 
 输出如下结果：
+
+<img src="https://github.com/Agentiums/Aihubix/blob/main/train/image/a3.png?raw=true" alt="a3" style="zoom:80%;" />
