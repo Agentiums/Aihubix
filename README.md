@@ -36,3 +36,4 @@ uvicorn app:app --reload --host 0.0.0.0 --port 11801
 
 识别的速度还是很快的，耗时:  0.02秒
 
+<img src="https://github.com/Agentiums/Aihubix/blob/main/image/001.png" alt="001" style="zoom:80%;" />
