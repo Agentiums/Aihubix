@@ -1,8 +1,22 @@
-# Aihubix
+<h1 align="center">
+  <b>Aihubix</b>
+  <br>
+</h1>
+<p align="center">Based on the BERT model text classification, the user query is classified and matched to the most appropriate LLAMA agent node. AI-driven natural language processing and knowledge graph reasoning are used to ensure efficient and accurate query processing.</p>
 
-基于 BERT 模型的文本分类，对用户的查询进行分类，并将其匹配到最合适的 LLAMA 代理节点。利用人工智能驱动的自然语言处理和知识图推理，确保高效、准确的查询处理。
+<p align="center">
+<a href="https://github.com/Agentiums/Aihubix/issues"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a>
+<a href="https://github.com/Agentiums/Aihubix"><img alt="Release" src="https://img.shields.io/badge/LICENSE-MIT-important"></a>
+</p>
 
-## 环境
+<p align="center">
+  <a href="/README_zh.md">中文文档</a> •
+  <a href="/train/README.md">Training the model</a> 
+</p>
+
+
+
+## environment
 
 python 3.8
 
@@ -14,44 +28,44 @@ sklearn
 
 transformers 
 
-## 数据集
+## data set
 
-目前共有2个类别：chat、code，可以匹配到聊天模型和代码模型。数据集按如下划分：
+There are currently two categories: chat and code, which can be matched to chat models and code models. The dataset is divided as follows:
 
-- 训练集：36000条标题，每个类别的标题数为18000
-- 验证集：2000条标题，每个类别的标题数为1000
-- 测试集：2000条标题，每个类别的标题数为1000
+- Training set: 36,000 titles, 18,000 titles in each category
+- Validation set: 2000 titles, 1000 titles for each category
+- Test set: 2000 titles, 1000 titles in each category
 
-可以按照 data 文件夹中的数据格式来准备自己任务所需的数据，并调整 config.py 中的相关配置参数。
+You can prepare the data required for your task according to the data format in the data folder and adjust the relevant configuration parameters in config.py.
 
-## 预训练 BERT 模型
+## Pre-trained BERT model
 
-从 huggingface 官网上下载 bert-base-chinese 模型权重、配置文件和词典到 pretrained_bert 文件夹中，下载地址：https://huggingface.co/bert-base-chinese/tree/main
+Download the bert-base-chinese model weights, configuration files and dictionaries from huggingface official website to the pretrained_bert folder. Download address: https://huggingface.co/bert-base-chinese/tree/main
 
-## 模型训练
+## Model Training
 
-文本分类模型训练：
+Text classification model training:
 
 ```shell
 python main.py --mode train --data_dir ./data --pretrained_bert_dir ./pretrained_bert
 ```
 
-训练中间日志如下：
+The training log is as follows:
 
 <img src="https://github.com/Agentiums/Aihubix/blob/main/train/image/a1.png?raw=true" alt="a1" style="zoom:80%;" />
 
-模型在验证集上的效果如下：
+The effect of the model on the validation set is as follows:
 
 <img src="https://github.com/Agentiums/Aihubix/blob/main/train/image/a2.png?raw=true" alt="a2" style="zoom:80%;" />
 
-### 模型预测
+### Model predictions
 
-对 data 文件夹下的 input.txt 中的文本进行分类预测：
+Make classification predictions for the text in input.txt under the data folder:
 
 ```shell
 python main.py --mode predict --data_dir ./data --pretrained_bert_dir ./pretrained_bert --input_file ./data/input.txt
 ```
 
-输出如下结果：
+The output is as follows:
 
 <img src="https://github.com/Agentiums/Aihubix/blob/main/train/image/a3.png?raw=true" alt="a3" style="zoom:80%;" />
